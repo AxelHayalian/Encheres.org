@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ENI Enchères</title>
+</head>
+
+    <body>
+        <header>
+            <h1> ASSOCIATION Les Objets Sont Nos Amis </h1>
+        </header>        
+
+        <div class="content">      
+            <div class="div1"><h2>Eni-Enchères</h2></div>
+        <nav>
+           <div class="div2"> <a href="monCompte.html">S'inscrire - Se connecter </a>   </div>         
+        </nav>
+        </div>
+        <h3>Liste des enchères</h3>
+
+        <p>Filtres :</p>
+
+        <div class="content2">
+            <div class="gauche">
+                <input id="searchbar" onkeyup="search_encheres ()" type="text" name="search" placeholder="Le nom de l'article contient"><br>  
+
+                <label for="enchère">Catégorie :</label>
+                    <select name="Objets" id="enchère">
+                        <option value="">Toutes</option>
+                        <option value="ameublement">Ameublement</option>
+                        <option value="informatique">Informatique</option>
+                        <option value="sport">Sports & Loisir</option>
+                        <option value="vetement">Vêtement</option>
+                    </select>
+            
+                <div class="droite">            
+                    <button class="button2">
+                        <a href="#">Rechercher</a>
+                    </button>
+                </div>                          
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="content3">
+           <div><img src="images/ordi.jpg" alt="ordinateur"></div>
+
+            <div>
+                <p class="p2">PC gamer pour travailler</p>
+                <p>Prix : 210 points</p>
+                <p>Fin de l'enchère : 10/08/2018</p>
+                <p>Vendeur : jojo44</p>
+            </div>
+
+            <div><img class="img2" src="images/rocketstove.jpg" alt="rocketstove"></div>
+
+            <div>
+                <p class="p2">Rocket stove pour riz et pâtes</p>
+                <p>Prix : 185 points</p>
+                <p>Fin de l'enchère : 09/10/2018</p>
+                <p>Vendeur : NineJea</p>
+            </div>
+
+        </div>
+
+    </body>
+
+    <footer>
+        <p class="p3">Réseaux sociaux</p>
+        <p class="copyright">Axel, Bénédicte, Chloé, Sébastien</p>
+    </footer>
+
+</html>
