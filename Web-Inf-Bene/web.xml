@@ -1,0 +1,25 @@
+<!-- JSP : page "NouvelleVente"--> 
+    <!-- Déclaration de la JSP --> 
+        <servlet>
+                <servlet-name>JSP - Page NouvelleVente</servlet-name>
+                <jsp-file>/WEB-INF/NouvelleVente.jsp</jsp-file>
+        </servlet>
+    <!-- Association de la JSP à une ou des URL --> 
+        <servlet-mapping>
+                <servlet-name>JSP - Page NouvelleVente</servlet-name>
+                <url-pattern>/http://127.0.0.1:5500/Vente/NouvelleVente.html</url-pattern>
+        </servlet-mapping>
+
+
+<!-- JSP : "PageEncherir"--> 
+    <!-- Déclaration de la JSP  --> 
+        <servlet>
+                <servlet-name>JSP - PageEncherir</servlet-name>
+                <jsp-file>/WEB-INF/PageEncherir.jsp</jsp-file>
+        </servlet>       
+    <!-- Association de la JSP à une ou des URL --> 
+        <servlet-mapping>
+                <servlet-name>JSP - PageEncherir</servlet-name>
+                <url-pattern>/http://127.0.0.1:5500/Encherir/PageEncherir.html</url-pattern>
+        </servlet-mapping>
+
