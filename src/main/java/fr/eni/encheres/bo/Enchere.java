@@ -1,11 +1,12 @@
 package fr.eni.encheres.bo;
 
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 
 public class Enchere {
 
-    private int noEnchere;
-    private LocalDate dateEnchere;
+    private Integer noEnchere;
+    private LocalDateTime dateEnchere;
     private int montantEnchere;
 
     // Associations
@@ -13,24 +14,39 @@ public class Enchere {
     private Utilisateur encherisseur;
     private boolean remporte = false;
 
-    // Contructeurs
-    public Enchere() {
+
+
+    public Enchere(Integer noEnchere) {
+        this.noEnchere = noEnchere;
     }
 
-    public Enchere(LocalDate dateEnchere, int montantEnchere, ArticleVendu article, Utilisateur encherisseur) {
+    public Enchere(Integer noEnchere, LocalDateTime dateEnchere, int montantEnchere, ArticleVendu article, Utilisateur encherisseur) {
+        super();
+        this.noEnchere = noEnchere;
+        this.dateEnchere = dateEnchere;
+        this.montantEnchere = montantEnchere;
+        this.article = article;
+        this.encherisseur = encherisseur;
+    }
+    public Enchere(LocalDateTime dateEnchere, int montantEnchere, ArticleVendu article, Utilisateur encherisseur) {
         super();
         this.dateEnchere = dateEnchere;
         this.montantEnchere = montantEnchere;
         this.article = article;
         this.encherisseur = encherisseur;
     }
+	public Enchere(Integer noEnchere, int montantEnchere) {
+		super();
+		this.noEnchere = noEnchere;
+		this.montantEnchere = montantEnchere;
+	}
 
-    // Getters & Setters
-    public LocalDate getDateEnchere() {
+	// Getters & Setters
+    public LocalDateTime getDateEnchere() {
         return dateEnchere;
     }
 
-    public void setDateEnchere(LocalDate dateEnchere) {
+    public void setDateEnchere(LocalDateTime dateEnchere) {
         this.dateEnchere = dateEnchere;
     }
 
@@ -66,11 +82,11 @@ public class Enchere {
         this.remporte = remporte;
     }
 
-    public int getNoEnchere() {
+    public Integer getNoEnchere() {
         return noEnchere;
     }
 
-    public void setNoEnchere(int noEnchere) {
+    public void setNoEnchere(Integer noEnchere) {
         this.noEnchere = noEnchere;
     }
 

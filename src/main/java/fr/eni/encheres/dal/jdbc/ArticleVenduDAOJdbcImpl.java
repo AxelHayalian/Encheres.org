@@ -58,6 +58,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			PreparedStatement stmt = connection.prepareStatement(SELECT_ALL);
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
+			
 				Utilisateur utilisateur = utilisateurDAO.selectById(rs.getInt("no_utilisateur"));
 				Categorie categorie = categorieDAO.selectById(rs.getInt("no_categorie"));
 				a = new ArticleVendu(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(), rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), categorie, utilisateur);
@@ -82,7 +83,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
  			pstmt.setDate(4, Date.valueOf(articleVendu.getDateFinEncheres()));
 			pstmt.setInt(5, articleVendu.getMiseAPrix());
 			pstmt.setInt(6, articleVendu.getPrixVente());
-			pstmt.setInt(7, articleVendu.getVente().getNoUtilisateur());
+			pstmt.setInt(7, articleVendu.getUtilisateur().getNoUtilisateur());
 			pstmt.setInt(8, articleVendu.getCategorieArticle().getNoCategorie());
 
 			pstmt.executeUpdate();
@@ -99,7 +100,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 	}
 
 	@Override
-	public ArticleVendu update(ArticleVendu articleVendu) {
+	public void update(ArticleVendu articleVendu) {
 		try (Connection connection = ConnectionProvider.getConnection(); PreparedStatement pstmt = connection.prepareStatement(UPDATE)){
 
 			pstmt.setString(1, articleVendu.getNom());
@@ -108,7 +109,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			pstmt.setDate(4, Date.valueOf(articleVendu.getDateFinEncheres()));
 			pstmt.setInt(5, articleVendu.getMiseAPrix());
 			pstmt.setInt(6, articleVendu.getPrixVente());
-			pstmt.setInt(7, articleVendu.getVente().getNoUtilisateur());
+			pstmt.setInt(7, articleVendu.getUtilisateur().getNoUtilisateur());
 			pstmt.setInt(8, articleVendu.getCategorieArticle().getNoCategorie());
 			pstmt.setInt(9, articleVendu.getNoArticle());
 
@@ -118,7 +119,6 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 		}catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-		return articleVendu;
 
 	}
 

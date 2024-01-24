@@ -8,6 +8,16 @@ public class Categorie {
 	//Contructeurs
 	public Categorie() {}
 
+	public Categorie(String libelle) {
+		super();
+		this.libelle = libelle;
+	}
+
+	public Categorie(Integer noCategorie) {
+		super();
+		this.noCategorie = noCategorie;
+	}
+
 
 	public Categorie(Integer noCategorie, String libelle) {
 		super();
@@ -16,7 +26,7 @@ public class Categorie {
 	}
 	
 	//Getters & Setters
-	public int getNoCategorie() {
+	public Integer getNoCategorie() {
 		return noCategorie;
 	}
 
